@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sempozyum Bilim ve Danışma Kurulu</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+        /* Genel Kapsayıcı */
+        .v-group-wrapper {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 15px;
+            font-family: 'Montserrat', sans-serif;
+            background-color: transparent;
+        }
+
+        .v-group-wrapper *, .v-group-wrapper *::before, .v-group-wrapper *::after {
+            box-sizing: border-box !important;
+        }
+
+        /* Grup Başlıkları */
+        .v-title-label {
+            font-family: 'Playfair Display', serif !important;
+            font-size: 1.8rem !important;
+            color: #1E5631 !important; /* Koyu Yeşil */
+            border-bottom: 2px solid #e2e8f0 !important;
+            padding-bottom: 10px !important;
+            margin: 50px 0 25px 0 !important;
+            display: flex !important;
+            align-items: center !important;
+            gap: 10px !important;
+        }
+
+        .v-title-label::before {
+            content: "";
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background-color: #4C9A2A; /* Açık Yeşil Nokta */
+            border-radius: 50%;
+        }
+
+        /* Izgara Yapısı */
+        .v-card-grid {
+            display: grid !important;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important;
+            gap: 20px !important;
+            align-items: stretch !important;
+        }
+
+        /* Kart Tasarımı */
+        .v-person-card {
+            background-color: #ffffff !important;
+            border-radius: 8px !important;
+            padding: 25px !important;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05) !important;
+            border-left: 4px solid #1E5631 !important; /* Koyu Yeşil */
+            transition: all 0.3s ease !important;
+            display: flex !important;
+            align-items: center !important;
+            min-height: 80px;
+        }
+
+        /* Hover (Üzerine Gelme) */
+        .v-person-card:hover {
+            transform: translateY(-5px) !important;
+            background-color: #F1F8F1 !important; /* Çok hafif yeşil arkaplan */
+            border-left-color: #4C9A2A !important; /* Açık yeşil çizgi */
+            box-shadow: 0 10px 20px rgba(76, 154, 42, 0.15) !important;
+        }
+
+        .v-person-name {
+            font-weight: 700 !important;
+            font-size: 1.1rem !important;
+            color: #2C3E50 !important;
+            line-height: 1.4 !important;
+            transition: color 0.3s ease !important;
+        }
+
+        .v-person-card:hover .v-person-name {
+            color: #1E5631 !important;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .v-card-grid { 
+                grid-template-columns: 1fr !important;
+            }
+            .v-title-label {
+                font-size: 1.5rem !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="v-group-wrapper">
+    
+    <div class="v-card-grid">
+        <div class="v-person-card"><span class="v-person-name">Prof. Dr. Cihat TÜRKBEN</span></div>
+        <div class="v-person-card"><span class="v-person-name">Prof. Dr. Ferhat ODABAŞ</span></div>
+        <div class="v-person-card"><span class="v-person-name">Prof. Dr. Halil İbrahim UZUN</span></div>
+        <div class="v-person-card"><span class="v-person-name">Prof. Dr. Hasan ÇELİK</span></div>
+        <div class="v-person-card"><span class="v-person-name">Prof. Dr. Nuray SİVRİTEPE</span></div>
+        <div class="v-person-card"><span class="v-person-name">Prof. Dr. Sadettin GÜRSÖZ</span></div>
+        <div class="v-person-card"><span class="v-person-name">Prof. Dr. Salih ÇELİK</span></div>
+        <div class="v-person-card"><span class="v-person-name">Prof. Dr. Semih TANGOLAR</span></div>
+        <div class="v-person-card"><span class="v-person-name">Prof. Dr. Yusuf Sabit AĞAOĞLU</span></div>
+
+
+        <div class="v-person-card"><span class="v-person-name">Dr. Cengiz ÖZER</span></div>
+        <div class="v-person-card"><span class="v-person-name">Dr. Seyfi ÖZIŞIK</span></div>
+
+
+        <div class="v-person-card"><span class="v-person-name">Fehmi YAYLA</span></div>
+        <div class="v-person-card"><span class="v-person-name">Hilmi ERYILDIZ</span></div>
+        <div class="v-person-card"><span class="v-person-name">Hüseyin BAYRAKTAR</span></div>
+        <div class="v-person-card"><span class="v-person-name">Kamil GÜRNİL</span></div>
+        <div class="v-person-card"><span class="v-person-name">Nevin KEBELİ</span></div>
+    </div>
+
+</div>
+
+</body>
+</html>

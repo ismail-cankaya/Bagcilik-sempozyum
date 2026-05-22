@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11. Türkiye Bağcılık ve Teknolojileri Sempozyumu</title>
+  <style>
+    /* Temel Kapsayıcı Ayarları */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+    }
+
+    .symposium-schedule-section {
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      padding: 60px 20px;
+      color: #333;
+    }
+
+    .symposium-container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+    }
+
+    /* Başlık ve Açıklama Alanı */
+    .symposium-header {
+      padding: 40px 40px 30px;
+      background: linear-gradient(135deg, #337717 0%, #1dc143 100%); /* Bağcılığa uygun bordo/şarap tonları */
+      color: #ffffff;
+      text-align: center;
+    }
+
+    .symposium-header h2 {
+      margin: 0 0 15px;
+      font-size: 1.8rem;
+      font-weight: 700;
+      line-height: 1.3;
+      color:#ffffff;
+    }
+
+    .symposium-badges {
+      margin-bottom: 20px;
+    }
+
+    .badge.theme-badge {
+      display: inline-block;
+      background-color: rgba(255, 255, 255, 0.2);
+      padding: 6px 15px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      backdrop-filter: blur(4px);
+    }
+
+    .symposium-description {
+      font-size: 1rem;
+      line-height: 1.6;
+      opacity: 0.9;
+      margin: 0;
+      max-width: 750px;
+      margin: 0 auto;
+    }
+
+    /* Tablo Ayarları */
+    .table-responsive {
+      padding: 30px 40px;
+      overflow-x: auto;
+    }
+
+    .symposium-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    .symposium-table th {
+      background-color: #f1f3f5;
+      color: #495057;
+      font-weight: 600;
+      padding: 15px 20px;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-bottom: 2px solid #dee2e6;
+    }
+
+    .symposium-table td {
+      padding: 16px 20px;
+      border-bottom: 1px solid #e9ecef;
+      color: #495057;
+      font-size: 1rem;
+      transition: background-color 0.2s ease;
+    }
+
+    .symposium-table tbody tr:hover td {
+      background-color: #f8f9fa;
+    }
+
+    .symposium-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Tarih Hücresi ve Vurgular */
+    .date-cell {
+      white-space: nowrap;
+      font-weight: 500;
+      color: #212529;
+    }
+
+    .highlight-date {
+      color: #d9534f; /* Son gönderim tarihleri gibi kritik günler için hafif kırmızı vurgu */
+    }
+
+    .main-event td {
+      background-color: rgba(0, 255, 64, 0.05); /* Sempozyum gününü vurgulamak için hafif arka plan */
+      color: #205c1e;
+    }
+
+    .main-event:hover td {
+      background-color: rgba(92, 30, 38, 0.08);
+    }
+
+    .pending {
+      font-style: italic;
+      color: #868e96;
+    }
+
+    /* Mobil Uyumluluk (Responsive) */
+    @media (max-width: 768px) {
+      .symposium-header {
+        padding: 30px 20px;
+      }
+      
+      .symposium-header h2 {
+        font-size: 1.5rem;
+      }
+      
+      .table-responsive {
+        padding: 20px;
+      }
+      
+      .symposium-table th, 
+      .symposium-table td {
+        padding: 12px 15px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="symposium-schedule-section">
+    <div class="symposium-container">
+      <div class="symposium-header">
+        <h2>Uluslararası Katılımlı 11. Türkiye Bağcılık ve Teknolojileri Sempozyumu</h2>
+        <div class="symposium-badges">
+          <span class="badge theme-badge">Tema: Sürdürülebilir Bağcılık</span>
+        </div>
+        <p class="symposium-description">
+          İklim Değişikliği ve Yerel Değerler Ekseninde; bağcılık alanındaki güncel araştırmaları, yenilikçi uygulamaları ve sektörün ihtiyaçlarını bir araya getirerek bilgi paylaşımını sağlamak amacıyla düzenlenmektedir. Özellikle yerel üzüm çeşitleri, sahip olduğumuz genetik kaynak ve bunların gelecekte bağcılıkta kullanılabilirliği üzerine odaklanılacaktır.
+        </p>
+      </div>
+
+      <div class="table-responsive">
+        <table class="symposium-table">
+          <thead>
+            <tr>
+              <th>Açıklama</th>
+              <th>Tarih</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Bildiri Çağrısının Yayınlanması ve Kayıtların Açılması</td>
+              <td class="date-cell">20 Nisan 2026</td>
+            </tr>
+            <tr>
+              <td>Bildiri Özet Gönderiminin Başlaması</td>
+              <td class="date-cell">20 Nisan 2026</td>
+            </tr>
+            <tr>
+              <td>Bildiri Özetlerinin Son Gönderim Tarihi</td>
+              <td class="date-cell highlight-date">15 Haziran 2026</td>
+            </tr>
+            <tr>
+              <td>Değerlendirilen Özetlerin Sonuçlarının Duyurulması</td>
+              <td class="date-cell">1 Temmuz 2026</td>
+            </tr>
+            <tr>
+              <td>Tam Metinlerin Son Gönderim Tarihi</td>
+              <td class="date-cell highlight-date">1 Eylül 2026</td>
+            </tr>
+            <tr>
+              <td>Sempozyum Programının Açıklanması</td>
+              <td class="date-cell">1 Eylül 2026</td>
+            </tr>
+            <tr>
+              <td>Kayıtların Kapanması</td>
+              <td class="date-cell highlight-date">18 Eylül 2026</td>
+            </tr>
+            <tr class="main-event">
+              <td><strong>Sempozyum Tarihi</strong></td>
+              <td class="date-cell"><strong>5-9 Ekim 2026</strong></td>
+            </tr>
+            <tr>
+              <td>Bildiri Tam Metinlerinin Yayınlanması</td>
+              <td class="date-cell pending">Tam Metinleri gönderilen bildiler hakem
+                 sürecinden<br> geçtikten sonra Viticulture Studies dergisinin <br>
+                 Sempozyum Özel sayısında yayınlanacaktır</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

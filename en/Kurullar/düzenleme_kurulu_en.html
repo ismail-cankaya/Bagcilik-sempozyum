@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+        /* Sadece bu alana etki edecek kapsayıcı kurallar */
+        .v-org-wrapper {
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 0 15px;
+            font-family: 'Montserrat', sans-serif;
+            background-color: transparent;
+        }
+
+        .v-org-wrapper *, .v-org-wrapper *::before, .v-org-wrapper *::after {
+            box-sizing: border-box !important;
+        }
+
+        /* Başlık */
+        .v-org-title-main {
+            font-family: 'Playfair Display', serif !important;
+            font-size: 2.5rem !important;
+            color: #1E5631 !important; /* Koyu Yeşil */
+            text-align: center !important;
+            margin-bottom: 50px !important;
+            position: relative;
+            border: none !important;
+            padding: 0 !important;
+        }
+
+        /* Sempozyum Başkanı Özel Kartı (Üstte Ortada) */
+        .v-president-container {
+            display: flex !important;
+            justify-content: center !important;
+            margin-bottom: 50px !important;
+        }
+
+        .v-president-card {
+            background-color: #ffffff !important;
+            border-top: 5px solid #1E5631 !important;
+            border-bottom: 5px solid #1E5631 !important;
+            padding: 35px 40px !important;
+            border-radius: 12px !important;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08) !important;
+            text-align: center !important; /* Başkan ortalanmış kalıyor */
+            width: 100% !important;
+            max-width: 600px !important;
+            transition: all 0.3s ease !important;
+        }
+
+        .v-president-card:hover {
+            transform: translateY(-5px) !important;
+            border-color: #4C9A2A !important; /* Açık Yeşil */
+            box-shadow: 0 12px 30px rgba(76, 154, 42, 0.15) !important;
+            background-color: #F1F8F1 !important;
+        }
+
+        .v-president-role {
+            color: #4C9A2A !important;
+            font-weight: 700 !important;
+            text-transform: uppercase !important;
+            font-size: 0.95rem !important;
+            letter-spacing: 1.5px !important;
+            margin-bottom: 12px !important;
+            display: block !important;
+        }
+
+        .v-president-name {
+            font-size: 1.6rem !important;
+            font-weight: 700 !important;
+            color: #2C3E50 !important;
+            margin: 0 0 8px 0 !important;
+            transition: color 0.3s ease !important;
+        }
+
+        .v-president-card:hover .v-president-name {
+            color: #1E5631 !important;
+        }
+
+        .v-president-title {
+            color: #5a6c7d !important;
+            font-size: 1.05rem !important;
+            font-weight: 500 !important;
+            margin: 0 !important;
+        }
+
+        /* Diğer Üyeler Izgara (Grid) Yapısı */
+        .v-org-grid {
+            display: grid !important;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)) !important;
+            gap: 20px !important;
+            align-items: stretch !important;
+        }
+
+        /* Diğer Üyeler Kart Tasarımı */
+        .v-org-card {
+            background-color: #ffffff !important;
+            border-radius: 8px !important;
+            padding: 20px 25px !important;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04) !important;
+            border-left: 4px solid #1E5631 !important; /* Koyu Yeşil */
+            transition: all 0.3s ease !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: center !important;
+            text-align: left !important; /* Sola yaslı eklendi */
+        }
+
+        .v-org-card:hover {
+            transform: translateY(-5px) !important;
+            background-color: #F1F8F1 !important;
+            border-left-color: #4C9A2A !important;
+            box-shadow: 0 10px 20px rgba(76, 154, 42, 0.15) !important;
+        }
+
+        .v-org-name {
+            font-weight: 700 !important;
+            font-size: 1.15rem !important;
+            color: #2C3E50 !important;
+            margin: 0 0 5px 0 !important;
+            transition: color 0.3s ease !important;
+            text-align: left !important; /* Sola yaslı eklendi */
+        }
+
+        .v-org-card:hover .v-org-name {
+            color: #1E5631 !important;
+        }
+
+        .v-org-title {
+            font-size: 0.85rem !important;
+            color: #5a6c7d !important;
+            font-weight: 500 !important;
+            margin: 0 !important;
+            line-height: 1.4 !important;
+            text-align: left !important; /* Sola yaslı eklendi */
+        }
+
+        /* Responsive Düzeltmeler */
+        @media (max-width: 768px) {
+            .v-org-grid { 
+                grid-template-columns: 1fr !important; 
+            }
+            .v-president-name {
+                font-size: 1.4rem !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="v-org-wrapper">
+    
+    <div class="v-president-container">
+        <div class="v-president-card">
+            <span class="v-president-role">Symposium President</span>
+            <h3 class="v-president-name">Dr. Mustafa Altuğ ATALAY</h3>
+            <p class="v-president-title">Director General of TAGEM</p>
+        </div>
+    </div>
+
+    <div class="v-org-grid">
+        
+        <div class="v-org-card">
+            <h4 class="v-org-name">Assoc. Prof. Dr. Davut KELEŞ</h4>
+            <p class="v-org-title">TAGEM / Head of Horticultural Research Department</p>
+        </div>
+
+        <div class="v-org-card">
+            <h4 class="v-org-name">Mehmet Ali KİRACI</h4>
+            <p class="v-org-title">Director of Tekirdağ Viticulture Research Institute</p>
+        </div>
+
+        <div class="v-org-card">
+            <h4 class="v-org-name">Dr. Sinem GÜLER</h4>
+            <p class="v-org-title">TAGEM / Viticulture Research Coordinator</p>
+        </div>
+
+        <div class="v-org-card">
+            <h4 class="v-org-name">Dr. Damla ZOBAR</h4>
+        </div>
+
+        <div class="v-org-card">
+            <h4 class="v-org-name">Mehmet Ali ŞENOL</h4>
+        </div>
+
+        <div class="v-org-card">
+            <h4 class="v-org-name">Dr. Onur ERGÖNÜL</h4>
+        </div>
+
+        <div class="v-org-card">
+            <h4 class="v-org-name">Turgay KIRAN</h4>
+        </div>
+
+        <div class="v-org-card">
+            <h4 class="v-org-name">Dr. Gamze UYSAL SEÇKİN</h4>
+        </div>
+
+        <div class="v-org-card">
+            <h4 class="v-org-name">Dr. Aslı POLAT</h4>
+        </div>
+
+        <div class="v-org-card">
+            <h4 class="v-org-name">Dr. Aylin ERKOÇAK</h4>
+        </div>
+
+        <div class="v-org-card">
+            <h4 class="v-org-name">Gürkan Güvenç AVCI</h4>
+        </div>
+
+        <div class="v-org-card">
+            <h4 class="v-org-name">Tamer UYSAL</h4>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11th Turkey Viticulture and Technologies Symposium</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
+
+        :root {
+            --primary-color: #722F37; /* Şarap Bordo */
+            --secondary-color: #2D5A27; /* Yaprak Yeşil */
+            --bg-light: #fafafa;
+            --text-dark: #2C3E50;
+            --accent-gold: #C5A059;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Ana İçerik Kapsayıcı */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Hero / Başlık Kartı */
+        .header-card {
+            background: white;
+            padding: 50px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--secondary-color);
+            margin: 30px auto 60px;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            color: var(--primary-color);
+        }
+
+        .intro-text {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            background: #F4F6F4;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 5px solid var(--accent-gold);
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--accent-gold);
+            display: inline-block;
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+
+        /* Geçmiş Sempozyumlar Listesi */
+        .history-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+        }
+
+        .history-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--secondary-color);
+            transition: transform 0.3s ease;
+        }
+
+        .history-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .history-card .number {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .history-card .date {
+            color: var(--accent-gold);
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .history-card .institution {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 10px;
+            display: block;
+            font-style: italic;
+        }
+
+        /* Yaklaşan Sempozyum (Vurgulu Alan) */
+        .upcoming-event {
+            background: white;
+            border: 2px solid var(--primary-color);
+            border-radius: 15px;
+            padding: 40px;
+            margin: 60px 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(114, 47, 55, 0.1);
+        }
+
+        .upcoming-event::after {
+            content: "NEW";
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            background: var(--accent-gold);
+            color: white;
+            padding: 5px 50px;
+            transform: rotate(45deg);
+            font-weight: bold;
+        }
+
+        .upcoming-event h3 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-top: 0;
+        }
+
+        .event-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 25px 0;
+        }
+
+        .detail-item {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .detail-item strong {
+            display: block;
+            color: var(--secondary-color);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        /* Amaçlar ve Odak Noktaları */
+        .focus-points {
+            background: var(--secondary-color);
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .focus-item {
+            text-align: center;
+            max-width: 200px;
+        }
+
+        .focus-item span {
+            display: block;
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        /* Davet / Footer */
+        footer {
+            text-align: center;
+            padding: 10px 20px 60px 20px;
+            background: transparent;
+        }
+
+        .invitation-box {
+            background: white;
+            padding: 40px;
+            display: inline-block;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            max-width: 800px;
+        }
+
+        /* Davetiye Yazı Stilleri */
+        .invitation-box p {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+            margin-top: 0;
+        }
+
+        .invitation-box strong {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            display: block;
+        }
+
+        /* Düzenleme Kurulu Metni */
+        .committee-text {
+            color: #000000 !important;
+            font-weight: 800;
+            font-size: 1.15rem !important;
+            margin-top: 25px !important;
+            letter-spacing: 1px;
+        }
+
+        /* Responsive Ayarlar */
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .header-card { padding: 30px 20px; }
+            .event-details { flex-direction: column; }
+            .history-grid { grid-template-columns: 1fr; }
+            .invitation-box p { font-size: 1.1rem; }
+            .invitation-box strong { font-size: 1.2rem; }
+            .committee-text { font-size: 1rem !important; margin-top: 20px !important; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    
+    <header class="header-card">
+        <h1>Turkey Viticulture and Technologies Symposium</h1>
+        <div class="intro-text">
+            Turkey, as the homeland of the vine, is one of the world's most important viticulture countries. This platform, where scientific studies bring together researchers, academics, and sector representatives, merges our deep-rooted history with the technologies of the future.
+        </div>
+    </header>
+
+    <section class="upcoming-event">
+        <h3>11th Turkey Viticulture and Technologies Symposium</h3>
+        <p>Organized under the leadership of TAGEM, this scientific platform with international participation shapes the future of viticulture in Tekirdağ.</p>
+        
+        <div class="event-details">
+            <div class="detail-item">
+                <strong>DATE</strong>
+                October 5 - 9, 2026
+            </div>
+            <div class="detail-item">
+                <strong>HOST</strong>
+                Tekirdağ Viticulture Research Institute
+            </div>
+            <div class="detail-item">
+                <strong>LOCATION</strong>
+                Tekirdağ, Türkiye
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Symposium Focus Points</h2>
+        <div class="focus-points">
+            <div class="focus-item">
+                <svg width="44" height="44" viewBox="0 0 24 24" fill="currentColor" style="margin-bottom: 5px;">
+                    <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22l1-2.3A4.49,4.49 0 0,0 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C10,6.25 14.4,6.25 17,8Z"/>
+                </svg>
+                <span>Sustainable Viticulture</span>
+            </div>
+            <div class="focus-item">
+                <svg width="44" height="44" viewBox="0 0 24 24" fill="currentColor" style="margin-bottom: 5px;">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                </svg>
+                <span>Climate Change</span>
+            </div>
+            <div class="focus-item">
+                <svg width="44" height="44" viewBox="0 0 24 24" fill="currentColor" style="margin-bottom: 5px;">
+                    <path d="M11,22A2,2 0 0,0 13,20A2,2 0 0,0 11,18A2,2 0 0,0 9,20A2,2 0 0,0 11,22M15,20A2,2 0 0,0 17,18A2,2 0 0,0 15,16A2,2 0 0,0 13,18A2,2 0 0,0 15,20M9,18A2,2 0 0,0 11,16A2,2 0 0,0 9,14A2,2 0 0,0 7,16A2,2 0 0,0 9,18M13,16A2,2 0 0,0 15,14A2,2 0 0,0 13,12A2,2 0 0,0 11,14A2,2 0 0,0 13,16M17,16A2,2 0 0,0 19,14A2,2 0 0,0 17,12A2,2 0 0,0 15,14A2,2 0 0,0 17,16M11,12A2,2 0 0,0 13,10A2,2 0 0,0 11,8A2,2 0 0,0 9,10A2,2 0 0,0 11,12M15,12A2,2 0 0,0 17,10A2,2 0 0,0 15,8A2,2 0 0,0 13,10A2,2 0 0,0 15,12M17.5,2C15,2 14,3 14,3C14,3 14,4 16,6C13.82,4.8 11.23,5.92 10.23,8.08C9.5,7 8.35,6.5 7,6.5C4.24,6.5 2,8.74 2,11.5C2,13.31 2.96,14.89 4.45,15.77C4.16,15.35 4,14.7 4,14C4,12.34 5.34,11 7,11C7.79,11 8.5,11.3 9,11.8C9.4,10.21 10.82,9 12.5,9C13.25,9 13.93,9.26 14.5,9.7C14.78,8.29 16.03,7.18 17.5,7.18C19.16,7.18 20.5,8.52 20.5,10.18C20.5,10.66 20.39,11.12 20.2,11.54C21.3,11.32 22,10.22 22,9C22,7.34 20.66,6 19,6C19,6 19.34,3.71 17.5,2Z"/>
+                </svg>
+                <span>Conservation of Local Varieties</span>
+            </div>
+            <div class="focus-item">
+                <svg width="44" height="44" viewBox="0 0 24 24" fill="currentColor" style="margin-bottom: 5px;">
+                    <path d="M11 22H13V16C16.87 15.6 20 12.27 20 8.27V2H4V8.27C4 12.27 7.13 15.6 11 16V22M6 8.27V5H18V8.27C18 11.58 15.31 14.25 12 14.25C8.69 14.25 6 11.58 6 8.27M8 8H16V10H8V8Z"/>
+                </svg>
+                <span>Value-Added Products</span>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<footer>
+    <div class="invitation-box">
+        <p>We would be honored by your contribution with your knowledge and experience.</p>
+        <strong>Hoping to see you in Tekirdağ on October 5-9, 2026...</strong>
+        <p class="committee-text">SYMPOSIUM ORGANIZING COMMITTEE</p>
+    </div>
+</footer>
+
+</body>
+</html>

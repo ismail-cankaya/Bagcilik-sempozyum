@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap');
+
+        /* Sadece bu alana etki edecek kapsayıcı kurallar */
+        .v-reg-wrapper {
+            max-width: 1200px; /* 4 kart yan yana sığabilmesi için biraz genişletildi */
+            margin: 60px auto;
+            padding: 0 20px;
+            font-family: 'Montserrat', sans-serif;
+            background-color: transparent;
+        }
+
+        .v-reg-wrapper *, .v-reg-wrapper *::before, .v-reg-wrapper *::after {
+            box-sizing: border-box !important;
+        }
+
+        /* Ana Başlık */
+        .v-reg-main-title {
+            font-family: 'Playfair Display', serif !important;
+            font-size: 2.5rem !important;
+            color: #1E5631 !important; /* Koyu Yeşil */
+            text-align: center !important;
+            margin-bottom: 30px !important;
+            position: relative;
+        }
+
+        /* Bilgi / Yönlendirme Panosu */
+        .v-reg-info-banner {
+            background: linear-gradient(135deg, #1E5631 0%, #2D5A27 100%) !important;
+            color: #ffffff !important;
+            border-radius: 10px !important;
+            padding: 20px 30px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            gap: 15px !important;
+            margin-top: 25px !important; 
+            margin-bottom: 40px !important;
+            box-shadow: 0 8px 20px rgba(30, 86, 49, 0.2) !important;
+        }
+
+        .v-reg-info-banner p {
+            margin: 0 !important;
+            font-size: 1.1rem !important;
+            line-height: 1.6 !important;
+            font-weight: 500 !important;
+        }
+
+        /* "BİLDİRİ GÖNDER" Vurgusu */
+        .v-reg-info-banner strong {
+            background-color: #C5A059 !important; /* Dore/Altın Rengi Vurgu */
+            color: #ffffff !important;
+            padding: 4px 14px !important;
+            border-radius: 5px !important;
+            letter-spacing: 0.5px !important;
+            font-weight: 700 !important;
+            white-space: nowrap !important;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1) !important;
+            margin: 0 4px !important;
+        }
+
+        .v-info-icon {
+            width: 32px !important;
+            height: 32px !important;
+            fill: #C5A059 !important; /* Dore/Altın İkon */
+            flex-shrink: 0 !important;
+        }
+
+        /* Kartların Izgara (Grid) Yapısı */
+        .v-reg-grid {
+            display: grid !important;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+            gap: 25px !important;
+            margin-bottom: 40px !important;
+            align-items: stretch !important;
+        }
+
+        /* Fiyat Kartı Tasarımı */
+        .v-reg-card {
+            background-color: #ffffff !important;
+            border-radius: 12px !important;
+            padding: 35px 25px !important;
+            text-align: center !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
+            border-top: 6px solid #1E5631 !important; /* Koyu yeşil üst çizgi */
+            transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: flex-start !important;
+            position: relative !important;
+            overflow: hidden !important;
+        }
+
+        .v-reg-card:hover {
+            transform: translateY(-8px) !important;
+            box-shadow: 0 15px 40px rgba(30, 86, 49, 0.12) !important;
+        }
+
+        /* Kategori Renklendirmeleri */
+        .v-reg-card.v-student-card {
+            border-top: 6px solid #4C9A2A !important; /* Açık Yeşil */
+        }
+        .v-reg-card.v-daily-card {
+            border-top: 6px solid #2C3E50 !important; /* Lacivert */
+        }
+        .v-reg-card.v-gala-card {
+            border-top: 6px solid #C5A059 !important; /* Dore/Altın */
+        }
+
+        /* Kategori Başlığı */
+        .v-reg-type {
+            font-size: 1.15rem !important;
+            font-weight: 700 !important;
+            color: #2C3E50 !important;
+            margin-bottom: 15px !important;
+            text-transform: uppercase !important;
+            letter-spacing: 1px !important;
+            min-height: 44px !important; /* İki satır olabilme ihtimaline karşı denge */
+        }
+
+        /* Fiyat Alanı */
+        .v-reg-price {
+            font-size: 3rem !important;
+            font-weight: 800 !important;
+            color: #1E5631 !important;
+            margin-bottom: 10px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            gap: 8px !important;
+        }
+
+        .v-student-card .v-reg-price { color: #4C9A2A !important; }
+        .v-daily-card .v-reg-price { color: #2C3E50 !important; }
+        .v-gala-card .v-reg-price { color: #C5A059 !important; }
+
+        .v-reg-currency {
+            font-size: 1.2rem !important;
+            font-weight: 600 !important;
+            color: #5a6c7d !important;
+            margin-top: 15px !important; 
+        }
+
+        /* İkonlar */
+        .v-reg-icon {
+            width: 48px !important;
+            height: 48px !important;
+            margin: 0 auto 20px auto !important;
+            fill: #1E5631 !important;
+        }
+
+        .v-student-card .v-reg-icon { fill: #4C9A2A !important; }
+        .v-daily-card .v-reg-icon { fill: #2C3E50 !important; }
+        .v-gala-card .v-reg-icon { fill: #C5A059 !important; }
+
+        /* Maddeleme (Liste) Tasarımı */
+        .v-reg-list {
+            list-style: none !important;
+            padding: 0 !important;
+            margin: 20px 0 0 0 !important;
+            text-align: left !important;
+            flex-grow: 1 !important;
+        }
+
+        .v-reg-list li {
+            padding: 10px 0 !important;
+            font-size: 0.95rem !important;
+            color: #4a5568 !important;
+            display: flex !important;
+            align-items: center !important;
+            gap: 10px !important;
+            border-bottom: 1px solid #f0f4f8 !important;
+            font-weight: 500 !important;
+        }
+
+        .v-reg-list li:last-child {
+            border-bottom: none !important;
+        }
+
+        .v-check-icon {
+            width: 18px !important;
+            height: 18px !important;
+            fill: #1E5631 !important;
+            flex-shrink: 0 !important;
+        }
+
+        .v-student-card .v-check-icon { fill: #4C9A2A !important; }
+        .v-daily-card .v-check-icon { fill: #2C3E50 !important; }
+        .v-gala-card .v-check-icon { fill: #C5A059 !important; }
+
+        /* Son Ödeme Tarihi Kutusu */
+        .v-reg-deadline-box {
+            background-color: #F1F8F1 !important; 
+            border: 2px dashed #4C9A2A !important;
+            border-radius: 8px !important;
+            padding: 20px 30px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            gap: 15px !important;
+            max-width: 600px !important;
+            margin: 0 auto !important;
+            color: #2C3E50 !important;
+            font-size: 1.15rem !important;
+        }
+
+        .v-deadline-icon {
+            width: 28px !important;
+            height: 28px !important;
+            fill: #d9534f !important;
+            flex-shrink: 0 !important;
+        }
+
+        .v-reg-deadline-box strong {
+            color: #d9534f !important;
+            font-weight: 800 !important;
+            font-size: 1.2rem !important;
+        }
+
+        /* Responsive Düzeltmeler */
+        @media (max-width: 992px) {
+            .v-reg-grid { 
+                grid-template-columns: repeat(2, 1fr) !important; 
+            }
+        }
+
+        @media (max-width: 768px) {
+            .v-reg-grid { 
+                grid-template-columns: 1fr !important; 
+            }
+            .v-reg-main-title {
+                font-size: 2rem !important;
+            }
+            .v-reg-info-banner {
+                flex-direction: column !important;
+                text-align: center !important;
+                padding: 20px !important;
+            }
+            .v-reg-price {
+                font-size: 2.8rem !important;
+            }
+            .v-reg-deadline-box {
+                flex-direction: column !important;
+                text-align: center !important;
+                padding: 20px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="v-reg-wrapper">
+
+    <div class="v-reg-grid">
+        
+        <!-- Kart 1: Sempozyum Katılım Ücreti -->
+        <div class="v-reg-card">
+            <svg class="v-reg-icon" viewBox="0 0 24 24">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+            </svg>
+            <div class="v-reg-type">Symposium Registration Fee</div>
+            <div class="v-reg-price">6000 <span class="v-reg-currency">TL</span></div>
+            <ul class="v-reg-list">
+                <li><svg class="v-check-icon" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Symposium Bag</li>
+                <li><svg class="v-check-icon" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Lunch (4 Meals)</li>
+                <li><svg class="v-check-icon" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Dinner (4 Meals)</li>
+                <li><svg class="v-check-icon" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Transportation to Technical Tours</li>
+            </ul>
+        </div>
+
+        <!-- Kart 2: Öğrenci Katılım Ücreti -->
+        <div class="v-reg-card v-student-card">
+            <svg class="v-reg-icon" viewBox="0 0 24 24">
+                <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72l5 2.73 5-2.73v3.72z"/>
+            </svg>
+            <div class="v-reg-type">Student Registration Fee</div>
+            <div class="v-reg-price">3000 <span class="v-reg-currency">TL</span></div>
+            <ul class="v-reg-list">
+                <li><svg class="v-check-icon" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Symposium Bag</li>
+                <li><svg class="v-check-icon" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Lunch (4 Meals)</li>
+                <li><svg class="v-check-icon" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Transportation to Technical Tours</li>
+            </ul>
+        </div>
+
+        <!-- Kart 3: Günlük Katılım -->
+        <div class="v-reg-card v-daily-card">
+            <svg class="v-reg-icon" viewBox="0 0 24 24">
+                <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7v-5z"/>
+            </svg>
+            <div class="v-reg-type">Daily Registration Fee</div>
+            <div class="v-reg-price">500 <span class="v-reg-currency">TL</span></div>
+            <ul class="v-reg-list">
+                <li><svg class="v-check-icon" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Lunch</li>
+            </ul>
+        </div>
+
+        <!-- Kart 4: Gala Yemeği -->
+        <div class="v-reg-card v-gala-card">
+            <svg class="v-reg-icon" viewBox="0 0 24 24">
+                <path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/>
+            </svg>
+            <div class="v-reg-type">Gala Dinner Fee</div>
+            <div class="v-reg-price">1500 <span class="v-reg-currency">TL</span></div>
+            <ul class="v-reg-list">
+                <li><svg class="v-check-icon" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Special Gala Dinner Participation</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="v-reg-deadline-box">
+        <svg class="v-deadline-icon" viewBox="0 0 24 24">
+            <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7v-5z"/>
+        </svg>
+        <span>Deadline for registration payments: <strong>June 8, 2026</strong></span>
+    </div>
+    
+    <div class="v-reg-info-banner">
+        <svg class="v-info-icon" viewBox="0 0 24 24">
+            <path d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+        </svg>
+        <p>Registration, abstract submissions, and registration fee payments can be made through the <strong>SUBMIT PAPER</strong> section.</p>
+    </div>
+
+</div>
+
+</body>
+</html>
