@@ -41,7 +41,7 @@
             justify-content: center !important;
             gap: 15px !important;
             margin-top: 25px !important; 
-            margin-bottom: 40px !important;
+            margin-bottom: 20px !important; /* Altındaki not için biraz daraltıldı */
             box-shadow: 0 8px 20px rgba(30, 86, 49, 0.2) !important;
         }
 
@@ -223,6 +223,22 @@
             font-size: 1.2rem !important;
         }
 
+        /* Eklenen Not Alanı Tasarımı */
+        .v-reg-note {
+            text-align: center !important;
+            font-size: 0.95rem !important;
+            color: #5a6c7d !important;
+            margin-top: 15px !important;
+            font-style: italic !important;
+            line-height: 1.5 !important;
+        }
+
+        .v-reg-note strong {
+            color: #1E5631 !important; /* Temaya uygun yeşil vurgu */
+            font-weight: 700 !important;
+            font-style: normal !important;
+        }
+
         /* Responsive Düzeltmeler */
         @media (max-width: 992px) {
             .v-reg-grid { 
@@ -250,6 +266,10 @@
                 text-align: center !important;
                 padding: 20px !important;
             }
+            .v-reg-note {
+                padding: 0 10px !important;
+                font-size: 0.9rem !important;
+            }
         }
     </style>
 </head>
@@ -259,7 +279,7 @@
 
     <div class="v-reg-grid">
         
-        <!-- Kart 1: Sempozyum Katılım Ücreti -->
+        <!-- Card 1: Symposium Registration Fee -->
         <div class="v-reg-card">
             <svg class="v-reg-icon" viewBox="0 0 24 24">
                 <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
@@ -271,10 +291,11 @@
                 <li><svg class="v-check-icon" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Lunch (4 Meals)</li>
                 <li><svg class="v-check-icon" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Dinner (4 Meals)</li>
                 <li><svg class="v-check-icon" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Transportation to Technical Tours</li>
+                <li><svg class="v-check-icon" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Coffee Break</li>
             </ul>
         </div>
 
-        <!-- Kart 2: Öğrenci Katılım Ücreti -->
+        <!-- Card 2: Student Registration Fee -->
         <div class="v-reg-card v-student-card">
             <svg class="v-reg-icon" viewBox="0 0 24 24">
                 <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72l5 2.73 5-2.73v3.72z"/>
@@ -285,22 +306,24 @@
                 <li><svg class="v-check-icon" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Symposium Bag</li>
                 <li><svg class="v-check-icon" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Lunch (4 Meals)</li>
                 <li><svg class="v-check-icon" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Transportation to Technical Tours</li>
+                <li><svg class="v-check-icon" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Coffee Break</li>
             </ul>
         </div>
 
-        <!-- Kart 3: Günlük Katılım -->
+        <!-- Card 3: Non-Presenter Registration Fee (5 Days) -->
         <div class="v-reg-card v-daily-card">
             <svg class="v-reg-icon" viewBox="0 0 24 24">
                 <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7v-5z"/>
             </svg>
-            <div class="v-reg-type">Daily Registration Fee</div>
-            <div class="v-reg-price">500 <span class="v-reg-currency">TL</span></div>
+            <div class="v-reg-type">Non-Presenter Registration Fee (5 Days)</div>
+            <div class="v-reg-price">2500 <span class="v-reg-currency">TL</span></div>
             <ul class="v-reg-list">
                 <li><svg class="v-check-icon" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Lunch</li>
+                <li><svg class="v-check-icon" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Coffee Break</li>
             </ul>
         </div>
 
-        <!-- Kart 4: Gala Yemeği -->
+        <!-- Card 4: Gala Dinner -->
         <div class="v-reg-card v-gala-card">
             <svg class="v-reg-icon" viewBox="0 0 24 24">
                 <path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/>
@@ -318,7 +341,7 @@
         <svg class="v-deadline-icon" viewBox="0 0 24 24">
             <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7v-5z"/>
         </svg>
-        <span>Deadline for registration payments: <strong>June 8, 2026</strong></span>
+        <span>Deadline for registration payments: <strong>June 30, 2026</strong></span>
     </div>
     
     <div class="v-reg-info-banner">
@@ -326,6 +349,11 @@
             <path d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
         </svg>
         <p>Registration, abstract submissions, and registration fee payments can be made through the <strong>SUBMIT PAPER</strong> section.</p>
+    </div>
+
+    <!-- New Note Area -->
+    <div class="v-reg-note">
+        <strong>Note:</strong> A participant can attend the symposium with a maximum of 2 papers as the first/corresponding author and/or presenting author.
     </div>
 
 </div>
