@@ -1,0 +1,104 @@
+<style>
+    .bs-sponsors-section {
+        padding: 40px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    .bs-section-title {
+        font-size: 24px;
+        color: #2c3e50;
+        margin-bottom: 25px;
+        position: relative;
+        padding-bottom: 10px;
+        font-weight: 600;
+    }
+
+    /* Alt çizgi efekti */
+    .bs-section-title::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 50px;
+        height: 3px;
+        background-color: #099d4c; /* Kurumsal yeşil tonu */
+    }
+
+    .bs-sponsors-grid {
+        display: grid;
+        /* Kartların daha büyük logolara yer açması için min genişlik 300px'e çıkarıldı */
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+        margin-top: 20px;
+    }
+
+    .bs-sponsor-card {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px; /* Köşeler biraz daha yumuşatıldı */
+        padding: 25px 20px;
+        text-align: center;
+        text-decoration: none;
+        color: #333333;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between; /* İçerik yerleşimi dengelendi */
+        min-height: 260px; /* Büyük logolar ve metinler için yükseklik artırıldı */
+    }
+
+    .bs-sponsor-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 16px rgba(0,0,0,0.06);
+        border-color: #099d4c; 
+        color: #099d4c;
+    }
+
+    /* Fotoğraf / Logo Alanı Tasarımı (Maksimum Boyuta Getirildi) */
+    .bs-sponsor-logo-container {
+        width: 100%;
+        max-width: 220px; /* Genişlik 220px'den 260px'e çıkarıldı */
+        height: 220px;    /* Yükseklik 95px'den 130px'e çıkarıldı */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+
+    .bs-sponsor-logo {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain; /* Logonun oranını bozmadan maksimum boyuta getirir */
+    }
+
+    .bs-sponsor-fullname {
+        font-size: 14px;
+        color: #64748b;
+        line-height: 1.4;
+        font-weight: 500;
+        margin-top: auto; /* Yazıyı her zaman en alta sabitler, hizayı korur */
+    }
+    
+    .bs-sponsor-card:hover .bs-sponsor-fullname {
+        color: #475569;
+    }
+</style>
+
+<div class="bs-sponsors-section">
+    <h3 class="bs-section-title">Destekleyenler</h3>
+    
+    <div class="bs-sponsors-grid">
+        
+        <a href="https://www.nku.edu.tr" target="_blank" class="bs-sponsor-card">
+            <div class="bs-sponsor-logo-container">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Tekirda%C4%9F_Nam%C4%B1k_Kemal_University_logo.svg" alt="TNKÜ Logo" class="bs-sponsor-logo">
+            </div>
+            <div class="bs-sponsor-fullname">Tekirdağ Namık Kemal Üniversitesi</div>
+        </a>
+
+    </div>
+</div>

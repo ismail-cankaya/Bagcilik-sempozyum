@@ -126,9 +126,15 @@
       background-color: rgba(92, 30, 38, 0.08);
     }
 
-    .pending {
+    /* Düzenlenen Uzun Metin Hücresi */
+    .pending-text {
+      font-weight: 500; /* Diğer tarihler gibi kalın yapıldı */
+      color: #212529; /* Diğer tarihlerle aynı koyu renk yapıldı */
       font-style: italic;
-      color: #868e96;
+      text-align: justify; /* Metni iki yana yaslar */
+      max-width: 350px; /* Sağa doğru aşırı uzamasını engeller */
+      white-space: normal; /* Kelimelerin otomatik olarak alt satıra inmesine izin verir */
+      line-height: 1.5;
     }
 
     /* Mobil Uyumluluk (Responsive) */
@@ -149,6 +155,10 @@
       .symposium-table td {
         padding: 12px 15px;
         font-size: 0.9rem;
+      }
+
+      .pending-text {
+        max-width: 100%; /* Mobilde genişlik sınırını kaldırır, ekrana sığdırır */
       }
     }
   </style>
@@ -186,11 +196,11 @@
             </tr>
             <tr>
               <td>Deadline for Submission of Abstracts</td>
-              <td class="date-cell highlight-date">June 30, 2026</td>
+              <td class="date-cell highlight-date">July 20, 2026</td>
             </tr>
             <tr>
               <td>Announcement of the Result of the Reviewed Abstracts</td>
-              <td class="date-cell">July 1, 2026</td>
+              <td class="date-cell">August 15, 2026</td>
             </tr>
             <tr>
               <td>Deadline for Manuscripts</td>
@@ -210,7 +220,8 @@
             </tr>
             <tr>
               <td>Publication of Symposium Proceedings</td>
-              <td class="date-cell pending">The submitted full-text papers will be published<br> in the Symposium Special Issue of the Viticulture Studies<br> journal after undergoing the peer-review process.</td>            </tr>
+              <td class="pending-text">Accepted papers for the symposium will be published in the Symposium Special Issue of the Viticulture Studies journal, provided that the full texts are submitted by the authors (Articles can be written in Turkish or English according to the author guidelines of the Viticulture Studies journal).</td>            
+            </tr>
           </tbody>
         </table>
       </div>

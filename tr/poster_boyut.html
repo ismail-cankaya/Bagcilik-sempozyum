@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11. Türkiye Bağcılık ve Teknolojileri Sempozyumu - Sunum Kuralları</title>
+    <style>
+        :root {
+            --primary-color: #235331; 
+            --secondary-color: #831b34; 
+            --bg-light: #f4f7f6;
+            --text-dark: #1e293b; 
+            --text-muted: #475569;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding: 2rem;
+            margin: 0;
+            -webkit-font-smoothing: antialiased; 
+        }
+
+        .guidelines-section {
+            max-width: 1100px; 
+            margin: 0 auto;
+            padding: 2rem;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .guidelines-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .guidelines-header h2 {
+            color: var(--primary-color);
+            font-size: 2.4rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 0.75rem;
+            margin-top: 0;
+        }
+
+        .guidelines-header p {
+            color: var(--text-muted);
+            font-size: 1.15rem;
+            font-weight: 500;
+            margin-top: 0;
+        }
+
+        .cards-container {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            align-items: stretch;
+        }
+
+        .rule-card {
+            flex: 1;
+            min-width: 320px;
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2.5rem 2rem;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .rule-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+            border-color: rgba(0,0,0,0.1);
+        }
+
+        .rule-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            border-radius: 12px 12px 0 0;
+        }
+
+        .rule-card.poster::before { background: var(--primary-color); }
+        .rule-card.presentation::before { background: var(--secondary-color); }
+
+        .card-icon {
+            width: 44px;
+            height: 44px;
+            margin-bottom: 1.2rem;
+        }
+        .rule-card.poster .card-icon { color: var(--primary-color); }
+        .rule-card.presentation .card-icon { color: var(--secondary-color); }
+
+        .rule-card h3 {
+            font-size: 1.7rem;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+        }
+        .rule-card.poster h3 { color: var(--primary-color); }
+        .rule-card.presentation h3 { color: var(--secondary-color); }
+
+        /* ----------------------------------------- */
+        /* TEKNİK ÖLÇÜ GÖRSELLERİ   */
+        /* ----------------------------------------- */
+        .visual-dimension-container {
+            background-color: #f8fafc;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #e2e8f0;
+            height: 220px;
+            box-sizing: border-box;
+        }
+
+        .dimension-svg {
+            display: block;
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .rule-card.poster .visual-dimension-container { color: var(--primary-color); }
+        .rule-card.presentation .visual-dimension-container { color: var(--secondary-color); }
+        
+        .svg-stroke { stroke: currentColor; stroke-width: 1.5px; fill: none; }
+        .svg-fill { fill: currentColor; opacity: 0.08; }
+        .svg-text { fill: #475569; font-size: 12px; font-family: 'Segoe UI', sans-serif; font-weight: 600; }
+        .svg-measure-line { stroke: #94a3b8; stroke-width: 1px; }
+
+        .rule-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            flex-grow: 1;
+        }
+
+        .rule-list li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .rule-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.35rem;
+            width: 1.2rem;
+            height: 1.2rem;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+
+        .rule-card.poster .rule-list li::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23235331'%3%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+        }
+        .rule-card.presentation .rule-list li::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23831b34'%3%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+        }
+
+        /* Normal metin içi kalın yazılar tam siyah */
+        .rule-list strong { 
+            font-weight: 700; 
+            color: #000000; 
+        }
+
+        /* Madde başlıkları (Boyut, Şablon vb.) kendi renklerinde */
+        .rule-card.poster .list-label { color: var(--primary-color); }
+        .rule-card.presentation .list-label { color: var(--secondary-color); }
+
+        .template-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 2rem;
+            padding: 0.9rem 1.5rem;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: all 0.2s ease;
+            width: 100%;
+            text-align: center;
+            box-sizing: border-box;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .rule-card.poster .template-btn { background-color: var(--primary-color); }
+        .rule-card.presentation .template-btn { background-color: var(--secondary-color); }
+
+        .template-btn:hover { 
+            opacity: 0.95; 
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            transform: translateY(-1px);
+        }
+        .template-btn:active { 
+            transform: translateY(1px); 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .btn-icon { width: 20px; height: 20px; fill: white; }
+
+        @media (max-width: 768px) {
+            body { padding: 1rem; }
+            .cards-container { flex-direction: column; }
+            .guidelines-section { padding: 1.5rem; }
+            .guidelines-header h2 { font-size: 1.8rem; }
+            .visual-dimension-container { height: auto; padding: 2rem 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="guidelines-section">
+        <div class="guidelines-header">
+            <p>11. Türkiye Bağcılık ve Teknolojileri Sempozyumu katılımcılarının dikkat etmesi gereken standartlar</p>
+        </div>
+
+        <div class="cards-container">
+            
+            <!-- Poster Sunum Kuralları -->
+            <div class="rule-card poster">
+                <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                <h3>Poster Sunumları</h3>
+
+                <!-- TEKNİK ÖLÇÜ GÖRSELİ: A0 Poster -->
+                <div class="visual-dimension-container">
+                    <svg class="dimension-svg" viewBox="0 0 160 220" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="35" y="20" width="84" height="119" rx="2" class="svg-stroke svg-fill" />
+                        <line x1="125" y1="20" x2="125" y2="139" class="svg-measure-line" />
+                        <line x1="122" y1="20" x2="128" y2="20" class="svg-measure-line" />
+                        <line x1="122" y1="139" x2="128" y2="139" class="svg-measure-line" />
+                        <text x="130" y="85" transform="rotate(90 130 85)" class="svg-text">118.9 cm</text>
+                        <line x1="35" y1="145" x2="119" y2="145" class="svg-measure-line" />
+                        <line x1="35" y1="142" x2="35" y2="148" class="svg-measure-line" />
+                        <line x1="119" y1="142" x2="119" y2="148" class="svg-measure-line" />
+                        <text x="77" y="160" text-anchor="middle" class="svg-text">84.1 cm</text>
+                        <text x="77" y="75" text-anchor="middle" font-size="24" font-weight="bold" fill="currentColor">A0</text>
+                        <text x="77" y="95" text-anchor="middle" font-size="10" fill="#475569">DİKEY (Portrait)</text>
+                    </svg>
+                </div>
+
+                <ul class="rule-list">
+                    <li><strong class="list-label">Boyut:</strong> Posterler tam olarak <strong>A0 boyutunda (84.1 x 118.9 cm)</strong> hazırlanmalıdır.</li>
+                    <li><strong class="list-label">Şablon:</strong> Organizasyon tarafından sağlanan resmi poster şablonu kullanılmalıdır.</li>
+                    <li><strong class="list-label">Tasarım:</strong> Şablonun ana tasarımında değişiklik yapılmamalı, yalnızca içerik alanları düzenlenmelidir.</li>
+                    <li><strong class="list-label">Teslimat:</strong> Katılımcılar posterlerini sempozyumdan önce <strong>fiziksel (basılı) formatta</strong> hazırlayıp getirmelidir.</li>
+                </ul>
+                
+                <a href="https://bagcilik.congress.gen.tr/files/kongre/243/editor/kayit_islem/poster-sablonu.pptx" class="template-btn">
+                    <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/></svg>
+                    Poster Şablonunu İndir
+                </a>
+            </div>
+
+            <!-- Sözlü Sunum Kuralları -->
+            <div class="rule-card presentation">
+                <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
+                </svg>
+                <h3>Sözlü Sunumlar</h3>
+
+                <!-- TEKNİK ÖLÇÜ GÖRSELİ: 16:9 Ekran -->
+                <div class="visual-dimension-container">
+                    <svg class="dimension-svg" viewBox="0 0 220 140" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="20" y="20" width="160" height="90" rx="4" class="svg-stroke svg-fill" />
+                        <line x1="20" y1="120" x2="180" y2="120" class="svg-measure-line" stroke-dasharray="3,3" />
+                        <text x="100" y="135" text-anchor="middle" class="svg-text">Genişlik: 1920 piksel</text>
+                        <line x1="190" y1="20" x2="190" y2="110" class="svg-measure-line" stroke-dasharray="3,3" />
+                        <text x="195" y="70" transform="rotate(90 195 70)" text-anchor="middle" class="svg-text">Yükseklik: 1080 piksel</text>
+                        <text x="100" y="75" text-anchor="middle" font-size="28" font-weight="bold" fill="currentColor">16:9</text>
+                        <text x="100" y="92" text-anchor="middle" font-size="10" fill="#475569">GENİŞ EKRAN (Widescreen)</text>
+                    </svg>
+                </div>-
+
+                <ul class="rule-list">
+                    <li><strong class="list-label">Format:</strong> Sunumlar ekran uyumluluğu için <strong>16:9 formatında</strong> hazırlanmalıdır.</li>
+                    <li><strong class="list-label">Şablon:</strong> Organizasyon tarafından sağlanan PowerPoint sunum şablonu kullanılmalıdır.</li>
+                    <li><strong class="list-label">Tasarım:</strong> Ana tasarım korunmalı, yalnızca içerik alanlarında değişiklik yapılmalıdır.</li>
+                    <li><strong class="list-label">Süre:</strong> Sunum süresi, soru-cevap bölümü de dahil olmak üzere <strong>en fazla 15 dakikadır.</strong></li>
+                    <li><strong class="list-label">Teslimat:</strong> Sunumun son sürümü ve kullanılacak tüm dosyalar, sunum öncesinde <strong>USB bellek</strong> içerisinde hazır bulundurulmalıdır.</li>
+                </ul>
+
+                <a href="https://bagcilik.congress.gen.tr/files/kongre/243/editor/kayit_islem/sunu-sablonu.pptx" class="template-btn">
+                    <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/></svg>
+                    Sunum Şablonunu İndir
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>

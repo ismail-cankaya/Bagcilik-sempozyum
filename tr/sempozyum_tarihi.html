@@ -126,9 +126,15 @@
       background-color: rgba(92, 30, 38, 0.08);
     }
 
-    .pending {
+    /* Düzenlenen Uzun Metin Hücresi */
+    .pending-text {
+      font-weight: 500; /* Diğer tarihler gibi kalın yapıldı */
+      color: #212529; /* Diğer tarihlerle aynı koyu renk yapıldı */
       font-style: italic;
-      color: #868e96;
+      text-align: justify; /* Metni iki yana yaslar */
+      max-width: 350px; /* Sağa doğru aşırı uzamasını engeller */
+      white-space: normal; /* Kelimelerin otomatik olarak alt satıra inmesine izin verir */
+      line-height: 1.5;
     }
 
     /* Mobil Uyumluluk (Responsive) */
@@ -149,6 +155,10 @@
       .symposium-table td {
         padding: 12px 15px;
         font-size: 0.9rem;
+      }
+      
+      .pending-text {
+        max-width: 100%; /* Mobilde genişlik sınırını kaldırır, ekrana sığdırır */
       }
     }
   </style>
@@ -186,15 +196,15 @@
             </tr>
             <tr>
               <td>Bildiri Özetlerinin Son Gönderim Tarihi</td>
-              <td class="date-cell highlight-date">30 Haziran 2026</td>
+              <td class="date-cell highlight-date">20 Temmuz 2026</td>
             </tr>
             <tr>
               <td>Değerlendirilen Özetlerin Sonuçlarının Duyurulması</td>
-              <td class="date-cell">1 Temmuz 2026</td>
+              <td class="date-cell">15 Ağustos 2026</td>
             </tr>
             <tr>
               <td>Tam Metinlerin Son Gönderim Tarihi</td>
-              <td class="date-cell highlight-date">1 Eylül 2026</td>
+              <td class="date-cell highlight-date">18 Eylül 2026</td>
             </tr>
             <tr>
               <td>Sempozyum Programının Açıklanması</td>
@@ -210,9 +220,7 @@
             </tr>
             <tr>
               <td>Bildiri Tam Metinlerinin Yayınlanması</td>
-              <td class="date-cell pending">Tam Metinleri gönderilen bildiler hakem
-                 sürecinden<br> geçtikten sonra Viticulture Studies dergisinin <br>
-                 Sempozyum Özel sayısında yayınlanacaktır</td>
+              <td class="pending-text">Sempozyuma kabul edilen bildiriler, yazarları tarafından tam metinleri gönderildiği takdirde, makaleler Viticulture Studies dergisinin Sempozyum Özel sayısında yayınlanacaktır (Makaleler Viticulture Studies dergisini yazım kurallarına göre Türkçe ve İngilizce olarak yapılabilecektir).</td>
             </tr>
           </tbody>
         </table>

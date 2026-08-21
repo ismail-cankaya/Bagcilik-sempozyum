@@ -1,0 +1,231 @@
+<style>
+    /* Main Container - White background */
+    .viti-section {
+        padding: 50px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        background-color: #ffffff; 
+        border-radius: 16px;
+    }
+
+    /* Header */
+    .viti-header {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .viti-title {
+        font-size: 28px;
+        color: #512833; /* Wine Red / Bordeaux */
+        font-weight: 700;
+        margin: 0;
+        display: inline-block;
+    }
+
+    .viti-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    }
+
+    /* Hotel Card Design */
+    .viti-card {
+        background: #ffffff;
+        border-radius: 16px;
+        overflow: hidden;
+        text-decoration: none;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        border: 1px solid #efe9e1;
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+
+    .viti-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 25px rgba(81, 40, 51, 0.15); /* Bordeaux shadow on hover */
+        border-color: #512833;
+    }
+
+    /* Image Area */
+    .viti-img-box {
+        position: relative;
+        width: 100%;
+        height: 220px;
+        overflow: hidden;
+        background-color: #ffffff; /* For the background of the logos */
+    }
+
+    .viti-img-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain; 
+        padding: 25px; 
+        box-sizing: border-box;
+        transition: transform 0.6s ease;
+        border: none; /* Removes the frame */
+        outline: none; /* Removes the outline */
+        mix-blend-mode: multiply; /* Blends the white background in the image and possible frame remnants with the page */
+    }
+
+    .viti-card:hover .viti-img-box img {
+        transform: scale(1.08);
+    }
+
+    /* Date Badge (Over Image) */
+    .viti-badge {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: rgba(74, 124, 89, 0.95); /* Vine green background */
+        color: white;
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-size: 13px;
+        font-weight: 600;
+        backdrop-filter: blur(4px);
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        z-index: 2;
+        letter-spacing: 0.5px;
+    }
+
+    /* Special badge color for GoldHan */
+    .viti-badge.special {
+        background: rgba(81, 40, 51, 0.95); /* Wine red background */
+    }
+
+    /* Content Area */
+    .viti-content {
+        padding: 20px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        justify-content: center;
+    }
+
+    .viti-stars {
+        color: #d4af37; /* Gold color for hotel feel */
+        font-size: 14px;
+        margin-bottom: 8px;
+        letter-spacing: 2px;
+    }
+
+    .viti-name {
+        color: #2c3e50;
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 5px;
+        transition: color 0.3s;
+    }
+
+    .viti-note {
+        margin-top: 10px;
+        font-size: 13px;
+        color: #888;
+        font-style: italic;
+    }
+
+    .viti-note.highlight {
+        background-color: #ffffff; /* Clean White Background */
+        color: #512833; /* Bordeaux Text */
+        font-weight: 600;
+        padding: 8px 16px; /* Inner Spacing */
+        border-radius: 20px; /* Rounded Corners */
+        border: 1px solid #efe9e1; /* Subtle Border */
+        font-size: 13px;
+        font-style: italic;
+        display: inline-block; /* Fits the content width */
+        margin: 10px auto; /* Centers in the card and adds spacing */
+        width: auto;
+    }
+
+    /* Bottom Section - General Announcement Note */
+    .viti-global-note {
+        margin-top: 40px;
+        padding: 20px;
+        background-color: #faf8f5; /* Very light cream tone for drawing attention */
+        border: 1px dashed #cbbcae;
+        border-radius: 12px;
+        text-align: center;
+        color: #512833;
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 1.5;
+    }
+</style>
+
+<div class="viti-section">
+    
+    <div class="viti-grid">
+        
+        <a href="https://www.desotel.com.tr/" target="_blank" class="viti-card">
+            <div class="viti-img-box">
+                <div class="viti-badge">October 4</div>
+                <img src="https://bagcilik.congress.gen.tr/files/kongre/243/editor/konaklama/desoteltekirdaglog.png" alt="Des Hotel">
+            </div>
+            <div class="viti-content">
+                <div class="viti-name">Des Hotel</div>
+            </div>
+        </a>
+
+        <a href="https://www.yathotel.com/" target="_blank" class="viti-card">
+            <div class="viti-img-box">
+                <div class="viti-badge">October 4</div>
+                <img src="https://bagcilik.congress.gen.tr/files/kongre/243/editor/konaklama/yathotellogo.png" alt="Yat Hotel">
+            </div>
+            <div class="viti-content">
+                <div class="viti-name">Yat Hotel</div>
+            </div>
+        </a>
+
+        <a href="https://rodostohotel.com.tr/" target="_blank" class="viti-card">
+            <div class="viti-img-box">
+                <div class="viti-badge">October 4</div>
+                <img src="https://bagcilik.congress.gen.tr/files/kongre/243/editor/konaklama/rodostohotellogo.jpg" alt="Rodosto Hotel">
+            </div>
+            <div class="viti-content">
+                <div class="viti-name">Rodosto Hotel</div>
+            </div>
+        </a>
+
+        <a href="https://www.goldhanhotel.com/" target="_blank" class="viti-card">
+            <div class="viti-img-box">
+                <div class="viti-badge special">October 5</div>
+                <img src="https://bagcilik.congress.gen.tr/files/kongre/243/editor/konaklama/goldhanhotellogo.png" alt="GoldHan Hotel">
+            </div>
+            <div class="viti-content">
+                <div class="viti-name">GoldHan Hotel</div>
+                <div class="viti-note highlight">* Reservations can be made starting from October 5.</div>
+            </div>
+        </a>
+
+        <a href="https://leilamansion.com/" target="_blank" class="viti-card">
+            <div class="viti-img-box">
+                <div class="viti-badge">October 4</div>
+                <img src="https://bagcilik.congress.gen.tr/files/kongre/243/editor/konaklama/leilamansionogo.jpg" alt="Leila Mansion">
+            </div>
+            <div class="viti-content">
+                <div class="viti-stars">Boutique</div>
+                <div class="viti-name">Leila Mansion</div>
+            </div>
+        </a>
+
+        <a href="https://www.millshotel.com.tr/" target="_blank" class="viti-card">
+            <div class="viti-img-box">
+                <div class="viti-badge">October 4</div>
+                <img src="https://bagcilik.congress.gen.tr/files/kongre/243/editor/konaklama/millshotellogo.png" alt="Mills Hotel">
+            </div>
+            <div class="viti-content">
+                <div class="viti-name">Mills Hotel</div>
+            </div>
+        </a>
+
+    </div>
+
+    <div class="viti-global-note">
+        * Reservations can be made at all hotels except GoldHan Hotel on <strong>October 4</strong>. For GoldHan Hotel, reservations can be made starting from <strong>October 5</strong>.
+    </div>
+</div>

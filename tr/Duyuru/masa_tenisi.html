@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ödüllü Masa Tenisi Turnuvası</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Playfair+Display:wght@700&display=swap');
+
+        /* Sempozyum Yeşil Teması Değişkenleri */
+        :root {
+            --v-tennis-primary: #1E5631; /* Koyu Yeşil */
+            --v-tennis-light: #4C9A2A;   /* Açık Yeşil */
+            --v-tennis-accent: #5A2A5A;  /* Afişteki Mor Tonu (Vurgu için) */
+            --v-tennis-bg: #fafafa;
+            --v-tennis-card-bg: #ffffff;
+            --v-tennis-text: #2C3E50;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--v-tennis-bg);
+            color: var(--v-tennis-text);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .v-tennis-wrapper {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .v-tennis-wrapper *, .v-tennis-wrapper *::before, .v-tennis-wrapper *::after {
+            box-sizing: border-box !important;
+        }
+
+        /* Başlık Alanı */
+        .v-tennis-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .v-tennis-subtitle {
+            font-size: 1rem;
+            color: var(--v-tennis-light);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .v-tennis-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--v-tennis-primary);
+            margin: 0 0 15px 0;
+            line-height: 1.2;
+        }
+
+        .v-tennis-motto {
+            font-size: 1.3rem;
+            color: var(--v-tennis-accent);
+            font-weight: 600;
+            font-style: italic;
+            margin: 0;
+        }
+
+        /* Ana İçerik: Yan Yana Düzen */
+        .v-tennis-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            background: var(--v-tennis-card-bg);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(30, 86, 49, 0.08);
+            border-top: 6px solid var(--v-tennis-primary);
+        }
+
+        /* Sol Taraf: Afiş */
+        .v-tennis-poster {
+            flex: 1;
+            max-width: 450px;
+            text-align: center;
+            position: relative;
+        }
+
+        .v-tennis-poster img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .v-tennis-poster img:hover {
+            transform: scale(1.03);
+        }
+
+        /* Sağ Taraf: Detaylar */
+        .v-tennis-info {
+            flex: 1.2;
+        }
+
+        .v-tennis-info h3 {
+            font-size: 2rem;
+            color: var(--v-tennis-primary);
+            margin-top: 0;
+            margin-bottom: 25px;
+            border-bottom: 3px solid var(--v-tennis-light);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .v-tennis-list {
+            list-style: none;
+            padding: 0;
+            margin: 0; /* Buton kalktığı için alt boşluğu sildik */
+        }
+
+        .v-tennis-list li {
+            font-size: 1.15rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            background: #F1F8F1; /* Çok açık yeşil */
+            padding: 15px 20px;
+            border-radius: 10px;
+            border-left: 5px solid var(--v-tennis-primary);
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        .v-tennis-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .v-tennis-list li:hover {
+            transform: translateX(5px);
+            background: #e4f3e4;
+            border-left-color: var(--v-tennis-light);
+        }
+
+        .v-tennis-list li svg {
+            width: 28px;
+            height: 28px;
+            fill: var(--v-tennis-light);
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .v-tennis-list li strong {
+            color: var(--v-tennis-primary);
+            margin-right: 8px;
+        }
+
+        /* Vurgulu Ücretsiz Etiketi */
+        .v-tennis-free-badge {
+            display: inline-block;
+            background-color: var(--v-tennis-light);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 1rem;
+            font-weight: 700;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(76, 154, 42, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(76, 154, 42, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(76, 154, 42, 0); }
+        }
+
+        /* Responsive Tasarım */
+        @media (max-width: 900px) {
+            .v-tennis-content {
+                flex-direction: column;
+                padding: 30px 20px;
+            }
+
+            .v-tennis-header h2 {
+                font-size: 2.2rem;
+            }
+
+            .v-tennis-motto {
+                font-size: 1.1rem;
+            }
+
+            .v-tennis-info h3 {
+                font-size: 1.8rem;
+            }
+
+            .v-tennis-list li {
+                font-size: 1rem;
+                padding: 12px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="v-tennis-wrapper">
+    
+    <!-- Başlık Alanı -->
+    <div class="v-tennis-header">
+        <span class="v-tennis-subtitle">11. Türkiye Bağcılık ve Teknolojileri Sempozyumu Etkinlikleri Kapsamında</span>
+        <h2>Ödüllü Masa Tenisi Turnuvası</h2>
+        <p class="v-tennis-motto">"Sporla buluşalım, dostlukla yarışalım!"</p>
+    </div>
+
+    <!-- Ana İçerik -->
+    <div class="v-tennis-content">
+        
+        <!-- Afiş Görseli -->
+        <div class="v-tennis-poster">
+            <img src="https://bagcilik.congress.gen.tr/files/kongre/243/editor/duyuru/afis-masa-tenisi-2.jpg" alt="Masa Tenisi Turnuvası Afişi">
+        </div>
+
+        <!-- Turnuva Bilgileri -->
+        <div class="v-tennis-info">
+            <h3>Turnuva Detayları</h3>
+            
+            <ul class="v-tennis-list">
+                <li>
+                    <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7v-5z"/></svg>
+                    <strong>Tarih:</strong> 5 - 9 Ekim 2026
+                </li>
+                <li>
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    <strong>Yer:</strong> Tekirdağ Bağcılık Araştırma Enstitüsü
+                </li>
+                <li>
+                    <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 9c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3.75 7.15c-.65-.79-3.08-1.65-3.75-1.65s-3.1.86-3.75 1.65c-.17.2-.47.24-.68.08-.21-.16-.25-.46-.08-.68 1.11-1.36 4.02-2.05 4.51-2.05s3.4.69 4.51 2.05c.17.22.13.52-.08.68-.21.16-.51.12-.68-.08z"/></svg>
+                    <strong>Katılım:</strong> <span class="v-tennis-free-badge">Ücretsizdir!</span>
+                </li>
+            </ul>
+
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
