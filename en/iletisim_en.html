@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - 11th Türkiye Viticulture and Technologies Symposium</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
+
+        :root {
+            --primary-color: #722F37; /* Şarap Bordo */
+            --secondary-color: #2D5A27; /* Yaprak Yeşil */
+            --bg-light: #fafafa;
+            --text-dark: #2C3E50;
+            --accent-gold: #C5A059;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent-gold);
+            margin: 15px auto 0;
+        }
+
+        /* İletişim Kartı */
+        .contact-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 40px 50px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border-top: 6px solid var(--secondary-color);
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .contact-person {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .contact-person h3 {
+            font-size: 1.8rem;
+            color: var(--text-dark);
+            margin: 0 0 5px 0;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .contact-person span {
+            color: var(--accent-gold);
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contact-info-list {
+            display: grid;
+            gap: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background-color: var(--bg-light);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-3px);
+            background-color: #fff;
+            border-color: var(--secondary-color);
+            box-shadow: 0 5px 15px rgba(45, 90, 39, 0.1);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--secondary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .contact-icon svg {
+            width: 24px;
+            height: 24px;
+            fill: #ffffff;
+        }
+
+        .contact-item:hover .contact-icon {
+            background-color: var(--primary-color);
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-label {
+            font-size: 0.9rem;
+            color: #666;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 3px;
+        }
+
+        .contact-value {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .contact-item:hover .contact-value {
+            color: var(--primary-color);
+        }
+
+        @media (max-width: 768px) {
+            .contact-card {
+                padding: 30px 20px;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            .contact-item {
+                flex-direction: column;
+                text-align: center;
+                padding: 25px 15px;
+            }
+            .contact-icon {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1 class="section-title">Contact</h1>
+    
+    <div class="contact-card">
+        <div class="contact-person">
+            <h3>Dr. Onur ERGÖNÜL</h3>
+            <span>Agricultural Engineer, MSc</span>
+        </div>
+
+        <div class="contact-info-list">
+            
+            <!-- Mobile Phone -->
+            <a href="tel:+905053972810" class="contact-item">
+                <div class="contact-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/>
+                    </svg>
+                </div>
+                <div class="contact-details">
+                    <span class="contact-label">Mobile Phone</span>
+                    <span class="contact-value">0505 397 28 10</span>
+                </div>
+            </a>
+
+            <!-- Office Phone -->
+            <a href="tel:+902822612042" class="contact-item">
+                <div class="contact-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                    </svg>
+                </div>
+                <div class="contact-details">
+                    <span class="contact-label">Office Phone (Ext: 169)</span>
+                    <span class="contact-value">0282 261 20 42 - 169</span>
+                </div>
+            </a>
+
+            <!-- Email Address -->
+            <a href="mailto:onur.ergonul@tarimorman.gov.tr" class="contact-item">
+                <div class="contact-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                </div>
+                <div class="contact-details">
+                    <span class="contact-label">Email Address</span>
+                    <span class="contact-value">onur.ergonul@tarimorman.gov.tr</span>
+                </div>
+            </a>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
